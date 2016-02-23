@@ -1,0 +1,15 @@
+Considerações a respeito da implementação do projeto:
+
+O problema proposto trata-se da teoria dos grafos que é uma área amplamente estudada e com muitas aplicações. Portanto, por se tratar de algoritmos totalmente mapeados e com 
+validações de eficiência matemática quanto a sua performance, assumi que o a avaliação envolve conhecer a natureza do problema e como reunir os elementos computacionais para propor uma melhor solução. Não implementei, dessa maneira, o algoritmo propriamente dito, haja vista o grande número de implementações disponíveis na internet e material vasto a respeito do assunto. Utilizei na implementação uma biblioteca Java (Java Universal Network/Graph Framework) que possui os mais variados algoritmos implementados e nessa implementação usei o Dijkstra. 
+Realizei uma arquitetura simples com apenas um projeto war para toda solução. A arquitetura e frameworks utilizados na solução foram:
+1.	Maven
+2.	Spring 
+3.	JAX-WS
+Por questões de tempo não finalizei a persistência com Hibernate, DAO e JPA, entretanto em uma solução final poderia ser feito várias otimizações, principalmente carregar em memória o objeto representando o grafo para otimizações de busca, isso é facilmente realizado com o Spring, uma vez que o ciclo de vida do objeto é gerenciado pelo container e a instancia de webservice é, por padrão, um objeto Singleton, permitindo, portanto, carregar o objeto que representa o grafo apenas uma única vez, ficando disponíveis para todos os request. A implementação já está assim, restando apenas carregar o objeto que representa o grafo da estrutura subjacente de persistência (BD, Lucene, Mongo DB , etc).
+
+Para executar basta adicionar o projeto no tomcat, por exemplo, e fazer a seguinte chamada. Realizei testes com o SoapUi.
+
+http://localhost:8080/entregamercadoria/logisticaWallMart?wsdl
+
+Atenciosamente.
